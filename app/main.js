@@ -1,13 +1,16 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import Hello from './components/Hello'
+import {render} from 'react-dom';
+import {createStore} from 'redux';
+import {Provider} from 'react-redux';
+import {TodoAppContainer} from './components/TodoApp'
+import reducer from './reducers/todoReducer';
 
-class App extends React.Component {
-    render() {
-        return (<div>
-            <Hello />
-        </div>)
-    }
-}
+const store = createStore(reducer);
+//import '../node_modules/bootstrap/dist/css/bootstrap.css';
 
-ReactDOM.render(<App/>, document.getElementById('main'));
+render(
+    <Provider store={store}>
+        <TodoAppContainer />
+    </Provider>
+    , document.getElementById('main')
+);
