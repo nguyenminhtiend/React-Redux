@@ -1,12 +1,12 @@
 var path = require('path');
 
-var APP_DIR = path.resolve(__dirname, 'app');
+var APP_DIR = path.resolve(__dirname, 'src');
 
 module.exports = {
     devtool: 'cheap-module-source-map',
     entry: APP_DIR + '/main.js',
     output: {
-        path: __dirname + '/build',
+        path: __dirname + '/public/build',
         filename: 'bundle.js',
         publicPath: 'http://localhost:3000/build/'
     },
