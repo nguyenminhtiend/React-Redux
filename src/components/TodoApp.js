@@ -20,15 +20,11 @@ class TodoApp extends React.Component {
     }
     render() {
         return (
-            <div className="container">
-                <Header />
-                <div className="row">
-                    <div className="col-lg-offset-3 col-lg-6">
-                        <TodoAdd addTodo={this.props.addTodo}/>
-                        <ul className="list-group">{this.props.items.map(this.todoRow)}</ul>
-                    </div>
+            <div className="row">
+                <div className="col-lg-offset-3 col-lg-6">
+                    <TodoAdd addTodo={this.props.addTodo}/>
+                    <ul className="list-group">{this.props.items.map(this.todoRow)}</ul>
                 </div>
-                <Footer />
             </div>
         );
     }
@@ -48,4 +44,4 @@ function mapDispatchToProps(dispatch) {
     };
 }
 
-export const TodoAppContainer = connect(mapStateToProps, mapDispatchToProps)(TodoApp);
+export default connect(mapStateToProps, mapDispatchToProps)(TodoApp);

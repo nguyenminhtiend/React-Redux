@@ -2,7 +2,8 @@ import React from 'react';
 import {render} from 'react-dom';
 import {createStore} from 'redux';
 import {Provider} from 'react-redux';
-import {TodoAppContainer} from './components/TodoApp'
+import { Router, browserHistory } from 'react-router';
+import routes from './routes'
 import reducer from './reducers/todoReducer';
 
 const store = createStore(reducer);
@@ -13,7 +14,7 @@ import './styles/style.css';
 
 render(
     <Provider store={store}>
-        <TodoAppContainer />
+        <Router history={browserHistory} routes={routes} />
     </Provider>
     , document.getElementById('main')
 );
